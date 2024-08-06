@@ -8,15 +8,18 @@ import "hardhat/console.sol";
 contract EtherLot {
     address public manager;
     address public feeAddress;
+    
     uint256 public lastTimestamp;
     uint256 public interval;
     uint256 public lotteryCounter;
     uint256 public ticketPrice;
+    uint256 public maxTicketsLimit;
 
-    uint8 public commission;
+    uint8 public commissionRate;
+    uint8 public maxTicketsPerTransaction;
 
     bool public ticketPriceChanged = false;
-    bool public commissionChanged = false;
+    bool public commissionRateChanged = false;
 
     enum Status {
         Pending,
@@ -27,15 +30,17 @@ contract EtherLot {
     }
     struct LotteryRound {
         Status status;
-        uint256 lotteryNumber;
-        address[] participants;
-        mapping(address => string[]) tickets;
-        string winningTicket;
+        // uint256 lotteryNumber; //it can be ommited since we can use the key of the mapping or array index
+        address[] participants; //it can be ommited
+        mapping(uint256 => address) tickets; // it can be array of tickets also insted of hashmap
+        uint256 winningTicket;
         uint256 prizeAmount;
+        uint256 commissionFeeAmount;
+        uint256 numberOfTickets;
         bool isClaimed;
     }
 
-    mapping(uint256 => LotteryRound) public lotteries;
+    mapping(uint256 => LotteryRound) public lotteries; // or array of lotteries
 
     constructor(uint256 updateInterval, address _feeAddress) {
         manager = msg.sender;
