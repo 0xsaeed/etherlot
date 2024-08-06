@@ -1,6 +1,6 @@
 # Task
 
-- [ ] ERC721 or ERC1155
+- [ ] [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721) or [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155)
 
 - [ ] Random Function [Link](https://docs.chain.link/vrf/v2-5/overview/subscription)
 
