@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Task
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+- [ ] ERC721 or ERC1155
 
-Try running some of the following tasks:
+- [ ] Random Function [Link](https://docs.chain.link/vrf/v2-5/overview/subscription)
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
+- [ ] Automation Interval Task: [Link](https://docs.chain.link/chainlink-automation/guides/compatible-contracts)
+
+
+
+- [ ] [Pancakeswap lottery](https://bscscan.com/address/0x5af6d33de2ccec94efb1bdf8f92bd58085432d2c#code)
