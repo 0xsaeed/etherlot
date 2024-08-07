@@ -2,10 +2,19 @@
 pragma solidity ^0.8.24;
 pragma abicoder v2;
 
+// Import statements
 // Uncomment this line to use console.log
 import "hardhat/console.sol";
 
+// Interfaces
+
+// Libraries
+
+// Contracts
 contract EtherLot {
+    // Type declarations
+    // State variables
+
     address public manager;
     address public feeAddress;
 
@@ -45,9 +54,17 @@ contract EtherLot {
 
     mapping(uint256 => LotteryRound) public lotteries; // or array of lotteries but it will be more expensive
 
-    /* I'm not sure this gonna be used or not */
-    mapping(address => uint256[]) public userLotteries;
+    mapping(address => uint256[]) public userLotteries; // I'm not sure this gonna be used or not
 
+
+    // Events
+
+    // Errors
+
+    // Modifiers
+
+    // Functions
+    //  *Constructor
     constructor(
         uint256 updateInterval,
         address _feeAddress,
@@ -65,21 +82,38 @@ contract EtherLot {
         commissionRate = _commissionRate;
         maxTicketsPerTransaction = _maxTicketsPerTransaction;
     }
+    // *Receive Function (if exists)
 
+    // *Fallback Function (if exists)
+
+    // *External functions
+
+    // *External functions that are view
+
+    // *External functions that are pure
+
+    // *Public functions
+
+    // *Internal functions
+
+    // *Private functions
+        
     function changeTicketPrice() returns () {}
 
     function changeCommissionRate() returns () {}
 
-    function buyTickets() returns () {}
+    function buyTickets(
+        uint8 _numberOfTickets,
+        uint256 _ticketPrice
+    ) returns () {}
 
     function buyTicket() returns () {}
 
-    function startLottery() returns () {}
+    function _startLottery(uint256 _lotteryNumber) internal returns () {}
 
-    function pickeWinner() returns () {}
+    function pickeWinner() internal returns () {}
 
     function claimPrize() returns () {}
-    
-    function getRandomeNumber() returns () {}
 
+    function getRandomeNumber() internal returns () {}
 }
